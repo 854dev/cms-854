@@ -53,7 +53,7 @@ public class ContentTypeController {
       return this.contentTypeService.update(contentTypeId, dto);
   }
 
-  @DeleteMapping("/{id}")
+  @DeleteMapping("/{contentTypeId}")
   @ResponseBody
   public ContentType delete(@PathVariable int contentTypeId) {
       return this.contentTypeService.delete(contentTypeId);
