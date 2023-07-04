@@ -1,3 +1,21 @@
+package com.mysite.sbb.content.entity;
+
+import java.util.Date;
+import java.util.List;
+
+import org.hibernate.annotations.Where;
+import org.hibernate.annotations.SQLDelete;
+
+import jakarta.persistence.CascadeType;
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
+import jakarta.persistence.Table;
+
 @Entity
 @Table(name = "content_type")
 @SQLDelete(sql = "UPDATE content_type SET deleted_at = CURRENT_TIMESTAMP WHERE content_type_id = ?")
@@ -6,7 +24,7 @@ public class ContentType {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "content_type_id")
-    private Long contentTypeId;
+    private int contentTypeId;
 
     @Column(name = "content_type_name", unique = true, length = 100)
     private String contentTypeName;
@@ -19,12 +37,8 @@ public class ContentType {
 
     // Getters and Setters
 
-    public Long getContentTypeId() {
+    public int getContentTypeId() {
         return contentTypeId;
-    }
-
-    public void setContentTypeId(Long contentTypeId) {
-        this.contentTypeId = contentTypeId;
     }
 
     public String getContentTypeName() {
@@ -33,21 +47,5 @@ public class ContentType {
 
     public void setContentTypeName(String contentTypeName) {
         this.contentTypeName = contentTypeName;
-    }
-
-    public List<ContentBodySchema> getContentBodySchema() {
-        return contentBodySchema;
-    }
-
-    public void setContentBodySchema(List<ContentBodySchema> contentBodySchema) {
-        this.contentBodySchema = contentBodySchema;
-    }
-
-    public Date getDeletedAt() {
-        return deletedAt;
-    }
-
-    public void setDeletedAt(Date deletedAt) {
-        this.deletedAt = deletedAt;
     }
 }

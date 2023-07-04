@@ -1,8 +1,11 @@
 package com.mysite.sbb.content.entity;
 
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Table;
@@ -10,7 +13,7 @@ import jakarta.persistence.Temporal;
 import jakarta.persistence.TemporalType;
 
 import java.util.Date;
-// import java.util.List;
+import java.util.List;
 
 @Entity
 @Table(name = "content_meta")
@@ -50,6 +53,6 @@ public class ContentMeta {
     @Column(name = "status", length = 100)
     private String status;
 
-    // @OneToMany(mappedBy = "contentMeta", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-    // private List<Tag> tags;
+    @OneToMany(mappedBy = "contentMeta", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    private List<ContentTag> tags;
 }
