@@ -11,10 +11,10 @@ public class ContentBodySchema {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "schema_id")
-    private Long schemaId;
+    private int schemaId;
 
     @Column(name = "content_type_id")
-    private Long contentTypeId;
+    private int contentTypeId;
 
     @Column(name = "schema_type", length = 100)
     private String schemaType;
