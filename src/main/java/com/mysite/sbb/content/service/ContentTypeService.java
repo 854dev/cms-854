@@ -32,16 +32,16 @@ public class ContentTypeService {
     }
 
     @Transactional
-    public ContentType update( ContentTypeDto dto) {
-        ContentType contentType = dto.toEntity();
-        this.contentTypeRepository.update(contentType);
-        return contentType;
+    public ContentType update(int contentTypeId, ContentTypeDto dto) {
+        ContentType contentType = this.contentTypeRepository.findByContentTypeId(contentTypeId);
+        contentType.setContentTypeName(dto.getContentTypeName());
+        return this.contentTypeRepository.save(contentType);
     }
 
     @Transactional
-    public ContentType delete(ContentTypeDto dto) {
-        ContentType contentType = dto.toEntity();
-        this.contentTypeRepository.save(contentType);
+    public ContentType delete(int contentTypeId) {
+        ContentType contentType = this.contentTypeRepository.findByContentTypeId(contentTypeId);
+        this.contentTypeRepository.delete(contentType);
         return contentType;
     }
 }
