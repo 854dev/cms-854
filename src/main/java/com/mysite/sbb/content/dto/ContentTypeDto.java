@@ -20,12 +20,4 @@ public class ContentTypeDto {
          result.setContentTypeName(contentTypeName);
         return result;
     }
-
-    public String getContentTypeName() {
-        return contentTypeName;
-    }
-
-    public void setContentTypeName(String contentTypeName) {
-        this.contentTypeName = contentTypeName;
-    }
 }
