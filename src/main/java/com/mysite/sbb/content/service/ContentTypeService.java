@@ -24,6 +24,10 @@ public class ContentTypeService {
         return this.contentTypeRepository.findAll(pageable);
     }
 
+    public ContentType findByContentTypeId(int contentTypeId) {
+        return this.contentTypeRepository.findByContentTypeId(contentTypeId);
+    }
+    
     @Transactional
     public ContentType create(ContentTypeDto dto) {
         ContentType contentType = dto.toEntity();
