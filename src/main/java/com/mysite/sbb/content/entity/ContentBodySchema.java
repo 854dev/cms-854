@@ -22,7 +22,7 @@ public class ContentBodySchema {
     @Column(name = "schema_name", length = 100)
     private String schemaName;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "content_type_id", referencedColumnName = "content_type_id", insertable = true, updatable = false)
     private ContentType contentType;
 
