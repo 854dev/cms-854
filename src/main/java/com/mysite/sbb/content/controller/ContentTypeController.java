@@ -19,7 +19,6 @@ import com.mysite.sbb.content.dto.ContentTypeDto;
 import com.mysite.sbb.content.entity.ContentType;
 import com.mysite.sbb.content.service.ContentTypeService;
 
-import jakarta.websocket.server.PathParam;
 import lombok.RequiredArgsConstructor;
 
 @RequiredArgsConstructor
