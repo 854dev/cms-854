@@ -2,10 +2,10 @@
 server.servlet.context-path=/api/v1
 
 # DATABASE
-spring.datasource.url=jdbc:postgresql://localhost:5432/cms-854
-spring.datasource.driverClassName=org.postgresql.Driver
-spring.datasource.username=postgres
-spring.datasource.password=Rust8854
+spring.datasource.url=your_db
+spring.datasource.driverClassName=your_driver_class
+spring.datasource.username=your_name
+spring.datasource.password=your_password
 
 # JPA
 spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.PostgreSQLDialect
