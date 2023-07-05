@@ -23,7 +23,7 @@ public class ContentBodySchema {
     private String schemaName;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "content_type_id", referencedColumnName = "content_type_id", insertable = false, updatable = false)
+    @JoinColumn(name = "content_type_id", referencedColumnName = "content_type_id", insertable = true, updatable = false)
     private ContentType contentType;
 
     @OneToMany(mappedBy = "contentBodySchema", cascade = CascadeType.ALL)
