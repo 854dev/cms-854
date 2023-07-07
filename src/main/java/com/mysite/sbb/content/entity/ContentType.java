@@ -15,7 +15,9 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
+import lombok.Data;
 
+@Data
 @Entity
 @Table(name = "content_type")
 @SQLDelete(sql = "UPDATE content_type SET deleted_at = CURRENT_TIMESTAMP WHERE content_type_id = ?")

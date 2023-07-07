@@ -15,4 +15,13 @@ public class ContentMapper {
         result.setContentType(contentType);
         return result;
     }
+
+    // public ContentTypeDto toDto (ContentType contentType) {
+    //     ContentBodySchema result = new ContentBodySchema();
+    //     result.setSchemaName(dto.getSchemaName());
+    //     result.setSchemaType(dto.getSchemaType());
+    //     result.setContentType(contentType);
+    //     return result;
+    // }
+
 }

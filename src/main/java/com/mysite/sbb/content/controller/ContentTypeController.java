@@ -1,5 +1,6 @@
 package com.mysite.sbb.content.controller;
 
+
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
@@ -28,15 +29,20 @@ public class ContentTypeController {
       
   private final ContentTypeService contentTypeService;
 
+private ContentTypeDto mapToDto(ContentType contentType) {
+    // Map other fields as needed
+    return ContentTypeDto.fromEntity(contentType);
+}
+
   @GetMapping
   @ResponseBody
-    public ResponseEntity<Page<ContentType>> findAllPaged(
+    public ResponseEntity<Page<ContentTypeDto>> findAllPaged(
         @RequestParam(value = "page", defaultValue = "1") int page,
         @RequestParam(value = "size", defaultValue = "10") int size
       ) {
         if (size > 50) { size = 50; }
         Pageable pageable = PageRequest.of(page - 1, size);
-        Page<ContentType> contentTypePage = contentTypeService.getListPaged(pageable);
+        Page<ContentTypeDto> contentTypePage = contentTypeService.getListPaged(pageable).map(this::mapToDto);
         return ResponseEntity.ok(contentTypePage);
     }
 
